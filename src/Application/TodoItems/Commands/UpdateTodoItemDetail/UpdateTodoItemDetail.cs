@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Domain.Share.Enums;
-
-namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail;
+﻿namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail;
 
 public record UpdateTodoItemDetailCommand : IRequest
 {

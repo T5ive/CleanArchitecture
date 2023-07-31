@@ -1,6 +1,4 @@
-﻿using FluentValidation.Results;
-
-namespace CleanArchitecture.Application.Share.Common.Exceptions;
+﻿namespace CleanArchitecture.Application.Share.Common.Exceptions;
 
 public class CustomValidationException : Exception
 {

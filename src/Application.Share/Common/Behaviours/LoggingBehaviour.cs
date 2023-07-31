@@ -1,7 +1,4 @@
-﻿using MediatR.Pipeline;
-using Microsoft.Extensions.Logging;
-
-namespace CleanArchitecture.Application.Share.Common.Behaviours;
+﻿namespace CleanArchitecture.Application.Share.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
 {

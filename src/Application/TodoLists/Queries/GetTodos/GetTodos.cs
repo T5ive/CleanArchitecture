@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Domain.Share.Enums;
-
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+﻿namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos;
 
 [Authorize]
 public record GetTodosQuery : IRequest<TodosVm>;

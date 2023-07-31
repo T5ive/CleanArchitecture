@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace CleanArchitecture.Application.Share.Common.Behaviours;
+﻿namespace CleanArchitecture.Application.Share.Common.Behaviours;
 
 public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {

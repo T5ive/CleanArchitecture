@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace CleanArchitecture.Application.TodoItems.EventHandlers;
+﻿namespace CleanArchitecture.Application.TodoItems.EventHandlers;
 
 public class TodoItemCreatedEventHandler : INotificationHandler<CreatedEvent<TodoItem>>
 {

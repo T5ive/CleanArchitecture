@@ -10,6 +10,8 @@ global using CleanArchitecture.Application.Share.Common.Security;
 global using CleanArchitecture.Application.Share.Constants;
 global using CleanArchitecture.Domain.Entities;
 global using CleanArchitecture.Domain.Events;
+global using CleanArchitecture.Domain.Share.Enums;
 global using Microsoft.EntityFrameworkCore;
 global using FluentValidation;
 global using MediatR;
+global using Microsoft.Extensions.Logging;
