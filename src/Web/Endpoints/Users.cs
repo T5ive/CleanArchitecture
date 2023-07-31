@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infrastructure.Identity;
+﻿using CleanArchitecture.Domain.Identity;
 
 namespace CleanArchitecture.Web.Endpoints;
 

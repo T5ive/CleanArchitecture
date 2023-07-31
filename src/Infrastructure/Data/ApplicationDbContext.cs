@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.Infrastructure.Data;
+﻿using CleanArchitecture.Domain.Identity;
+
+namespace CleanArchitecture.Infrastructure.Data;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {

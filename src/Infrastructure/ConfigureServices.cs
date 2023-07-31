@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
+﻿using CleanArchitecture.Domain.Identity;
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ConfigureServices
 {

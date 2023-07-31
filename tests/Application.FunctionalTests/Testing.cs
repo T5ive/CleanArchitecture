@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Domain.Constants;
+﻿using CleanArchitecture.Domain.Identity;
 using CleanArchitecture.Infrastructure.Data;
 using CleanArchitecture.Infrastructure.Identity;
 using MediatR;
@@ -99,7 +99,7 @@ public partial class Testing
         {
             await _database.ResetAsync();
         }
-        catch (Exception) 
+        catch (Exception)
         {
         }
 

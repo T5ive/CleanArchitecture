@@ -5,3 +5,4 @@ global using CleanArchitecture.Domain.Exceptions;
 global using CleanArchitecture.Domain.Share.Common;
 global using CleanArchitecture.Domain.Share.Enums;
 global using CleanArchitecture.Domain.ValueObjects;
+global using Microsoft.AspNetCore.Identity;

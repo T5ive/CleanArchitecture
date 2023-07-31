@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.Infrastructure.Identity;
+﻿using CleanArchitecture.Domain.Identity;
+
+namespace CleanArchitecture.Infrastructure.Identity;
 
 public class IdentityService : IIdentityService
 {
