@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Application.Common.Interfaces;
 using CleanArchitecture.Domain.Common;
+using CleanArchitecture.Domain.Share.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -37,28 +38,86 @@ public class AuditableEntityInterceptor : SaveChangesInterceptor
     {
         if (context == null) return;
 
-        foreach (var entry in context.ChangeTracker.Entries<BaseAuditableEntity>())
+        foreach (var entry in context.ChangeTracker.Entries())
         {
-            if (entry.State == EntityState.Added)
-            {
-                entry.Entity.CreatedBy = _user.Id;
-                entry.Entity.Created = _dateTime.Now;
-            } 
+            var entityType = entry.Entity.GetType();
 
-            if (entry.State == EntityState.Added || entry.State == EntityState.Modified || entry.HasChangedOwnedEntities())
-            {
-                entry.Entity.LastModifiedBy = _user.Id;
-                entry.Entity.LastModified = _dateTime.Now;
-            }
+            var auditableType = GetEntityType(entityType);
+
+            if (auditableType is EntityType.None) continue;
+
+            if (entry.Entity is not IBaseOwnEntity baseOwnEntity) continue;
+
+            SetOwnEntityProperties(entry, baseOwnEntity);
+
+            if (entry.Entity is not IAuditableEntity auditableEntity) continue;
+
+            SetAuditableProperties(entry, auditableEntity);
+
+            if (entry.Entity is not IFullBaseAuditableEntity fullBaseAuditableEntity) continue;
+
+            SetFullBaseAuditableProperties(entry, fullBaseAuditableEntity);
         }
+    }
+
+    private void SetOwnEntityProperties(EntityEntry entry, IBaseOwnEntity entity)
+    {
+        if (entry.State == EntityState.Added)
+        {
+            entity.CreatedBy = _user.Id;
+            entity.Created = _dateTime.Now;
+        }
+    }
+
+    private void SetAuditableProperties(EntityEntry entry, IAuditableEntity entity)
+    {
+        if (entry.State == EntityState.Added || entry.State == EntityState.Modified || entry.HasChangedOwnedEntities())
+        {
+            entity.LastModifiedBy = _user.Id;
+            entity.LastModified = _dateTime.Now;
+        }
+    }
+
+    private void SetFullBaseAuditableProperties(EntityEntry entry, IFullBaseAuditableEntity entity)
+    {
+        if (entry.State == EntityState.Deleted)
+        {
+            entry.State = EntityState.Modified;
+            entity.IsDeleted = true;
+            entity.DeletedBy = _user.Id;
+            entity.Deleted = _dateTime.Now;
+        }
+    }
+
+    private static EntityType GetEntityType(Type type)
+    {
+        switch (type.IsGenericType)
+        {
+            case true when type.GetGenericTypeDefinition() == typeof(BaseOwnEntity<>):
+                return EntityType.BaseOwnEntity;
+
+            case true when type.GetGenericTypeDefinition() == typeof(BaseAuditableEntity<>):
+                return EntityType.BaseAuditableEntity;
+
+            case true when type.GetGenericTypeDefinition() == typeof(FullBaseAuditableEntity<>):
+                return EntityType.FullBaseAuditableEntity;
+        }
+
+        var baseType = type.BaseType;
+        if (baseType != null && baseType != typeof(object))
+        {
+            return GetEntityType(baseType);
+        }
+
+        return EntityType.None;
     }
 }
 
 public static class Extensions
 {
     public static bool HasChangedOwnedEntities(this EntityEntry entry) =>
-        entry.References.Any(r => 
-            r.TargetEntry != null && 
-            r.TargetEntry.Metadata.IsOwned() && 
+        entry.References.Any(r =>
+            r.TargetEntry != null &&
+            r.TargetEntry.Metadata.IsOwned() &&
             (r.TargetEntry.State == EntityState.Added || r.TargetEntry.State == EntityState.Modified));
 }
