@@ -1,9 +1,10 @@
-﻿using CleanArchitecture.Domain.Events;
+﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Events;
 using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.TodoItems.EventHandlers;
 
-public class TodoItemCreatedEventHandler : INotificationHandler<TodoItemCreatedEvent>
+public class TodoItemCreatedEventHandler : INotificationHandler<CreatedEvent<TodoItem>>
 {
     private readonly ILogger<TodoItemCreatedEventHandler> _logger;
 
@@ -12,7 +13,7 @@ public class TodoItemCreatedEventHandler : INotificationHandler<TodoItemCreatedE
         _logger = logger;
     }
 
-    public Task Handle(TodoItemCreatedEvent notification, CancellationToken cancellationToken)
+    public Task Handle(CreatedEvent<TodoItem> notification, CancellationToken cancellationToken)
     {
         _logger.LogInformation("CleanArchitecture Domain Event: {DomainEvent}", notification.GetType().Name);
 

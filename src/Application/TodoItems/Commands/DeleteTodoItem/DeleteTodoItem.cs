@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Application.Common.Interfaces;
+using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Events;
 
 namespace CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
@@ -23,7 +24,7 @@ public class DeleteTodoItemCommandHandler : IRequestHandler<DeleteTodoItemComman
 
         _context.TodoItems.Remove(entity);
 
-        entity.AddDomainEvent(new TodoItemDeletedEvent(entity));
+        entity.AddDomainEvent(new DeletedEvent<TodoItem>(entity));
 
         await _context.SaveChangesAsync(cancellationToken);
     }

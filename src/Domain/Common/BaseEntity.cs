@@ -1,24 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿namespace CleanArchitecture.Domain.Common;
 
-namespace CleanArchitecture.Domain.Common;
-
-public abstract class BaseEntity
+public abstract class BaseEntity<T> : IBaseEntity
 {
     // This can easily be modified to be BaseEntity<T> and public T Id to support different key types.
     // Using non-generic integer types for simplicity
-    public int Id { get; set; }
+    public T? Id { get; set; }
 
-    private readonly List<BaseEvent> _domainEvents = new();
+    private readonly List<IBaseEvent> _domainEvents = new();
 
     [NotMapped]
-    public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents.AsReadOnly();
+    public IReadOnlyCollection<IBaseEvent> DomainEvents => _domainEvents.AsReadOnly();
 
-    public void AddDomainEvent(BaseEvent domainEvent)
+    public void AddDomainEvent(IBaseEvent domainEvent)
     {
         _domainEvents.Add(domainEvent);
     }
 
-    public void RemoveDomainEvent(BaseEvent domainEvent)
+    public void RemoveDomainEvent(IBaseEvent domainEvent)
     {
         _domainEvents.Remove(domainEvent);
     }
