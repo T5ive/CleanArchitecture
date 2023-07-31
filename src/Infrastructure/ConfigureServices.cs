@@ -1,15 +1,4 @@
-﻿using CleanArchitecture.Application.Share.Common.Interfaces;
-using CleanArchitecture.Application.Share.Constants;
-using CleanArchitecture.Infrastructure.Data;
-using CleanArchitecture.Infrastructure.Data.Interceptors;
-using CleanArchitecture.Infrastructure.Identity;
-using CleanArchitecture.Infrastructure.Services;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Configuration;
-
-namespace Microsoft.Extensions.DependencyInjection;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ConfigureServices
 {

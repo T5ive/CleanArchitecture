@@ -1,13 +1,4 @@
-﻿using CleanArchitecture.Application.Share.Constants;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Identity;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-namespace CleanArchitecture.Infrastructure.Data;
+﻿namespace CleanArchitecture.Infrastructure.Data;
 
 public static class InitialiserExtensions
 {

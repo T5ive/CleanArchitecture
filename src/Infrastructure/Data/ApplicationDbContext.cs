@@ -1,11 +1,4 @@
-﻿using System.Reflection;
-using CleanArchitecture.Application.Share.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-namespace CleanArchitecture.Infrastructure.Data;
+﻿namespace CleanArchitecture.Infrastructure.Data;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
 {

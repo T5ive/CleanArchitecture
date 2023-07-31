@@ -1,9 +1,4 @@
-﻿using CleanArchitecture.Domain.Share.Common;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-
-namespace CleanArchitecture.Infrastructure.Data.Interceptors;
+﻿namespace CleanArchitecture.Infrastructure.Data.Interceptors;
 
 public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
 {
