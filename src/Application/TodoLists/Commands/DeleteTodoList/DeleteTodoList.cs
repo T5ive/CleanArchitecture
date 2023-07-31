@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-
-namespace CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList;
+﻿namespace CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList;
 
 public record DeleteTodoListCommand(int Id) : IRequest;
 

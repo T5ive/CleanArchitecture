@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
+﻿using CleanArchitecture.Application.Share.Common.Interfaces;
 
 namespace CleanArchitecture.Infrastructure.Services;
 

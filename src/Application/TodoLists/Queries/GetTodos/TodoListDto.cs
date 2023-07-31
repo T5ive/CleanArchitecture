@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Domain.Entities;
-
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+﻿namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos;
 
 public class TodoListDto
 {

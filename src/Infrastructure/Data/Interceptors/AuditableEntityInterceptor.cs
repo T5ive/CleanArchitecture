@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
+﻿using CleanArchitecture.Application.Share.Common.Interfaces;
 using CleanArchitecture.Domain.Common;
 using CleanArchitecture.Domain.Share.Common;
 using Microsoft.EntityFrameworkCore;

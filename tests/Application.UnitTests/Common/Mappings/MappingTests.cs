@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.Serialization;
 using AutoMapper;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.Common.Models;
+using CleanArchitecture.Application.Share.Common.Interfaces;
+using CleanArchitecture.Application.Share.Common.Models;
 using CleanArchitecture.Application.TodoItems.Queries.GetTodoItemsWithPagination;
 using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
 using CleanArchitecture.Domain.Entities;
@@ -17,7 +17,7 @@ public class MappingTests
 
     public MappingTests()
     {
-        _configuration = new MapperConfiguration(config => 
+        _configuration = new MapperConfiguration(config =>
             config.AddMaps(Assembly.GetAssembly(typeof(IApplicationDbContext))));
 
         _mapper = _configuration.CreateMapper();

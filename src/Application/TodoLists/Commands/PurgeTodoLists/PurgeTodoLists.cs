@@ -1,8 +1,4 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.Common.Security;
-using CleanArchitecture.Domain.Constants;
-
-namespace CleanArchitecture.Application.TodoLists.Commands.PurgeTodoLists;
+﻿namespace CleanArchitecture.Application.TodoLists.Commands.PurgeTodoLists;
 
 [Authorize(Roles = Roles.Administrator)]
 [Authorize(Policy = Policies.CanPurge)]

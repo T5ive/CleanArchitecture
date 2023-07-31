@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.Common.Models;
+﻿using CleanArchitecture.Application.Share.Common.Interfaces;
+using CleanArchitecture.Application.Share.Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-
-namespace CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
+﻿namespace CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
 
 public record UpdateTodoListCommand : IRequest
 {

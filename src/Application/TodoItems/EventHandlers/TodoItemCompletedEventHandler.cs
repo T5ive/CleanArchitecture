@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Events;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.TodoItems.EventHandlers;
 

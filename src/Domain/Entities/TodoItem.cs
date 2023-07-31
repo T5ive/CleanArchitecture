@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Domain.Share.Enums;
+
+namespace CleanArchitecture.Domain.Entities;
 
 public class TodoItem : BaseAuditableEntity<int>
 {

@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Constants;
+﻿using CleanArchitecture.Application.Share.Common.Interfaces;
+using CleanArchitecture.Application.Share.Constants;
 using CleanArchitecture.Infrastructure.Data;
 using CleanArchitecture.Infrastructure.Data.Interceptors;
 using CleanArchitecture.Infrastructure.Identity;

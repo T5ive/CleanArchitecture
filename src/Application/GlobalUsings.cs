@@ -1,6 +1,15 @@
-﻿global using Ardalis.GuardClauses;
+﻿global using System.Reflection;
+global using Ardalis.GuardClauses;
 global using AutoMapper;
 global using AutoMapper.QueryableExtensions;
+global using CleanArchitecture.Application.Share.Common.Behaviours;
+global using CleanArchitecture.Application.Share.Common.Interfaces;
+global using CleanArchitecture.Application.Share.Common.Mappings;
+global using CleanArchitecture.Application.Share.Common.Models;
+global using CleanArchitecture.Application.Share.Common.Security;
+global using CleanArchitecture.Application.Share.Constants;
+global using CleanArchitecture.Domain.Entities;
+global using CleanArchitecture.Domain.Events;
 global using Microsoft.EntityFrameworkCore;
 global using FluentValidation;
 global using MediatR;
