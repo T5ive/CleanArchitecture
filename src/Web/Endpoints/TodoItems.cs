@@ -1,5 +1,4 @@
-﻿using CleanArchitecture.Application.Common.Models;
-using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+﻿using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
 using CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
 using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
 using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail;

@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace CleanArchitecture.Web.Infrastructure;
+﻿namespace CleanArchitecture.Web.Infrastructure;
 
 public static class WebApplicationExtensions
 {

@@ -1,15 +1,4 @@
-﻿using Azure.Identity;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Infrastructure.Data;
-using CleanArchitecture.Web.Services;
-using Microsoft.AspNetCore.Mvc;
-#if (UseApiOnly)
-using NSwag;
-using NSwag.Generation.Processors.Security;
-#endif
-using ZymLabs.NSwag.FluentValidation;
-
-namespace Microsoft.Extensions.DependencyInjection;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ConfigureServices
 {
